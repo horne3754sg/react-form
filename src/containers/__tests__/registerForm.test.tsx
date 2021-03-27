@@ -1,4 +1,5 @@
 import React from 'react'
+import { createSerializer } from '@emotion/jest'
 import { render, fireEvent, cleanup, act } from '@testing-library/react'
 
 import RegisterForm from '../RegisterForm'
@@ -49,4 +50,11 @@ it('calls onSubmit with username, email, password and terms checked when submitt
   expect(handleSubmit).toHaveBeenCalledWith(fakeUser)
 
   expect(submitNode.type).toBe('submit')
+})
+
+expect.addSnapshotSerializer(createSerializer())
+
+test('snapshot', () => {
+  const { container } = render(<RegisterForm onSubmit={() => {}} />)
+  expect(container.firstChild).toMatchSnapshot()
 })
