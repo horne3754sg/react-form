@@ -1,7 +1,9 @@
 import React from 'react'
-import { render, fireEvent, waitFor, act } from '@testing-library/react'
+import { render, fireEvent, cleanup, act } from '@testing-library/react'
 
 import RegisterForm from '../RegisterForm'
+
+afterEach(cleanup)
 
 it('calls onSubmit with username, email, password and terms checked when submitted', async () => {
   // Arrange
