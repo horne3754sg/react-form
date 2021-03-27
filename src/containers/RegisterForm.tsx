@@ -10,7 +10,7 @@ const RegisterForm: FunctionComponent<IProps> = ({ onSubmit }) => {
     username: '',
     email: '',
     password: '',
-    passwordCheck: '',
+    passwordRepeat: '',
     terms: false,
   })
 
@@ -38,9 +38,9 @@ const RegisterForm: FunctionComponent<IProps> = ({ onSubmit }) => {
           onChange={handleChange}
         />
         <Input
-          name="password-check"
+          name="password-repeat"
           placeholder="Repeat Password"
-          value={formData.passwordCheck}
+          value={formData.passwordRepeat}
           onChange={handleChange}
         />
       </FormGroup>
@@ -51,7 +51,7 @@ const RegisterForm: FunctionComponent<IProps> = ({ onSubmit }) => {
         value={formData.terms}
         onChange={handleChange}
       />
-      <Button disabled={formState.submitting} />
+      <Button testId="register-form-btn" disabled={formState.submitting} />
     </Form>
   )
 }

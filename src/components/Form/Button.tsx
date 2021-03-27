@@ -6,17 +6,23 @@ import { css, jsx } from '@emotion/react'
 import { button, buttonLoading } from './styles'
 
 interface IProps {
+  testId: string
   label?: string
   disabled: boolean
   onClick?: React.MouseEventHandler
 }
 
-const Button: FunctionComponent<IProps> = ({ label, disabled, onClick }) => {
-
+const Button: FunctionComponent<IProps> = ({
+  testId,
+  label,
+  disabled,
+  onClick,
+}) => {
   return (
     <button
       type="submit"
       onClick={onClick}
+      data-testid={testId}
       css={css`
         ${button}
       `}

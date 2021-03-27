@@ -22,7 +22,7 @@ const Input: FunctionComponent<IProps> = (props) => {
       css={css`
         width: 100%;
         ${type === 'checkbox' &&
-        `
+        css`
           display: flex;
           align-items: center;
           flex-direction: row;
